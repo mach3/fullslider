@@ -24,6 +24,7 @@
 		my.container = null;
 		my.list = null;
 		my.slides = null;
+		my.images = null;
 		my.nextButton = null;
 		my.prevButton = null;
 		my.controll = null;
@@ -58,6 +59,7 @@
 			my.container = $(element);
 			my.list = my.container.find(".full-slider-content").find("ul");
 			my.slides = my.list.find("li");
+			my.images = my.slides.find("img");
 			my.nextButton = my.container.find(".button-next a");
 			my.prevButton = my.container.find(".button-prev a");
 			my.controll = my.container.find(".full-slider-controll");
@@ -107,23 +109,23 @@
 
 		/**
 		 * Ready for image load
-		 * When loaded, show slide contents
+		 * When loaded, show slide contents and run callback
 		 *
 		 * @param Function callback
 		 */
 		my.ready = function(callback){
-			var imgs, count, onLoaded;
-
-			imgs = my.slides.find("img");
-			count = imgs.length;
-			onLoaded = function(){
-				count --;
-				if(! count){
-					my.container.find(".full-slider-content").fadeIn();
-					callback();
-				}
-			};
-			imgs.onImageLoaded(onLoaded);
+			var count = my.images.length;
+			my.images.each(function(){
+				var img = new Image;
+				img.onload = function(){
+					count --;
+					if(! count){
+						my.container.find(".full-slider-content").fadeIn();
+						callback();
+					}
+				};
+				img.src = this.src;
+			});
 		};
 
 		/**
@@ -238,29 +240,8 @@
 	}());
 
 
-	$.extend($, {
-		getImageLoaded : function(ele){
-			if(! ele.complete){
-				return false;
-			}
-			if(typeof img.naturalWidth !== "undefined" && img.naturalWidth === 0){
-				return false;
-			}
-			return true;
-		}
-	});
 
 	$.fn.extend({
-		onImageLoaded : function(callback){
-			this.each(function(){
-				if($.getImageLoaded(this)){
-					callback.call(this);
-					return;
-				}
-				$(this).on("load", callback);
-			});
-			return this;
-		},
 		fullSlider : function(option){
 			this.each(function(){
 				var ins = new FullSlider(this, option);
