@@ -1,5 +1,10 @@
 
-# FullSlider 
+# FullSlider version 1.0
+
+1. これはなに
+1. 使い方
+1. オプション
+1. スタイルシートについて
 
 ## これはなに
 
@@ -13,6 +18,19 @@
 
 - fullslider.js (assets/js/fullslider/fullslider.js)
 - fullslider.css (assets/csss/fullslider.css)
+
+
+## 環境
+
+JavaScript自体は下記の環境で検証しました。
+
+- Firefox 最新版
+- Chrome 最新版
+- IE7+
+
+スタイルシートについてはそれぞれ最新版にて検証、また、Mac版Webkitに最適化されています。
+頑張ってCSSにて調整をしてください。
+
 
 ## 使い方
 
@@ -81,6 +99,7 @@ $("#my-full-slider").fullSlider({
 ### inactiveImageAlpha : Number (0.3)
 
 非アクティブの画像のアルファ値（スタイルシートと合わせる事）
+
 
 
 
