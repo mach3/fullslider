@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html lang="ja-JP">
+<head>
+	<meta charset="UTF-8">
+	<title>FullSlider Demo</title>
+	<link rel="stylesheet" href="../assets/css/fullslider.css" />
+	<style type="text/css">
+
+	body {
+		margin:0;
+		padding:50px 0;
+		font-size:13px;
+	}
+
+	</style>
+</head>
+<body>
+
+	<div id="my-full-slider" class="full-slider">
+		<div class="full-slider-nav">
+			<div class="button-nav button-next">
+				<a href="#">&gt;</a>
+			</div>
+			<div class="button-nav button-prev">
+				<a href="#">&lt;</a>
+			</div>
+		</div>
+		<div class="full-slider-content">
+			<div class="content-inner">
+				<ul> 
+					<li> 
+						<div class="image">
+							<img src="../assets/img/001.png" alt="" width="960" height="400" />
+						</div>
+						<div class="dialog">
+							<div class="dialog-inner">
+								lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="image">
+							<img src="../assets/img/002.png" alt="" width="960" height="400" />
+						</div>
+						<div class="dialog">
+							<div class="dialog-inner">
+								lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="image">
+							<img src="../assets/img/003.png" alt="" width="960" height="400" />
+						</div>
+						<div class="dialog">
+							<div class="dialog-inner">
+								lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="image">
+							<img src="../assets/img/004.png" alt="" width="960" height="400" />
+						</div>
+						<div class="dialog">
+							<div class="dialog-inner">
+								lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="image">
+							<img src="../assets/img/005.png" alt="" width="960" height="400" />
+						</div>
+						<div class="dialog">
+							<div class="dialog-inner">
+								lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="image">
+							<img src="../assets/img/006.png" alt="" width="960" height="400" />
+						</div>
+						<div class="dialog">
+							<div class="dialog-inner">
+								lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim veniam,
+								quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="full-slider-controll">
+			<ul>
+				<li><a href="#" data-index="0">1</a></li>
+				<li><a href="#" data-index="1">2</a></li>
+				<li><a href="#" data-index="2">3</a></li>
+				<li><a href="#" data-index="3">4</a></li>
+				<li><a href="#" data-index="4">5</a></li>
+				<li><a href="#" data-index="5">6</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../assets/js/vendors/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../assets/js/vendors/jquery-easing/jquery.easing.min.js"></script>
+	<script type="text/javascript" src="../assets/js/fullslider/fullslider.js"></script>
+
+	<script type="text/javascript">
+
+	$("#my-full-slider").fullSlider({
+		slideDuration : 600,
+		slideEasing : "easeOutBack",
+		dialogDuration : 300,
+		dialogEasing : "easeOutCubic"
+	});
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,148 @@
+
+/*
+ * Styles for full-slider
+ * ----------------------
+ */
+
+.full-slider {
+
+	@full-slider-width: 960px;
+	@full-slider-height: 400px;
+
+	position:relative;
+	height:@full-slider-height;
+	background-color:#000;
+
+	.full-slider-nav {
+		position:absolute;
+		width:@full-slider-width;
+		height:@full-slider-height;
+		left:50%;
+		margin-left:@full-slider-width/2 * -1;
+
+		.button-nav {
+			position:absolute;
+			z-index:1;
+			top:50%;
+
+			a {
+				display:inline-block;
+				*display:inline;
+				*zoom:1;
+				background-color:#222;
+				color:#ccc;
+				font-size:16px;
+				font-weight:bold;
+				padding:10px 16px;
+				text-decoration:none;
+				border-radius:50%;
+				border:2px solid #666;
+
+				&:hover {
+					background-color:#000;
+					color:#fff;
+				}
+			}
+
+			&.button-next {
+				right:-60px;
+			}
+			&.button-prev {
+				left:-60px;
+			}
+		}
+
+	}
+
+
+	.full-slider-content {
+		display:none;
+		overflow:hidden;
+
+		.content-inner {
+			position:relative;
+			width:@full-slider-width;
+			height:@full-slider-height;
+			margin:0 auto;
+		}
+
+		ul {
+			position:absolute;
+			letter-spacing:-0.36em;
+			white-space:nowrap;
+			margin:0;
+			padding:0;
+
+			li {
+				position:relative;
+				display:inline-block;
+				*display:inline;
+				*zoom:1;
+				letter-spacing:normal;
+				width:@full-slider-width;
+				height:@full-slider-height;
+				overflow:hidden;
+
+				.image {
+					position:absolute;
+					opacity:0.3;
+					filter:alpha(opacity=30);
+				}
+
+				.dialog {
+					position:absolute;
+					right:30px;
+					bottom:-150px;
+					width:400px;
+					height:150px;
+					background-color:rgba(0, 0, 0, .5);
+					border-radius:5px 5px 0 0;
+					white-space:normal;
+					color:#fff;
+
+					.dialog-inner {
+						padding:16px;
+					}
+				}
+			}
+		}
+	}
+
+	.full-slider-controll {
+		position:absolute;
+		width:@full-slider-width;
+		bottom:-48px;
+		left:50%;
+		margin-left:-1 * @full-slider-width / 2;
+
+		ul {
+			margin:0;
+			padding:0;
+			text-align:center;
+		}
+		li {
+			display:inline;
+
+			a {
+				display:inline-block;
+				*zoom:1;
+				*display:inline;
+				margin:0 8px;
+				background-color:#555;
+				color:#ccc;
+				text-decoration:none;
+				padding:3px 8px 1px;
+				border-radius:50%;
+
+				&:hover {
+					background-color:#000;
+					color:#fff;
+				}
+				&.active {
+					background-color:#222;
+				}
+			}
+		}
+	}
+
+}
