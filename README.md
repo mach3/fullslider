@@ -1,5 +1,5 @@
 
-# FullSlider version 1.0
+# FullSlider version 1.1.0
 
 1. これはなに
 1. 動作に必要なもの
