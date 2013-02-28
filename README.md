@@ -6,6 +6,7 @@
 1. 環境
 1. 使い方
 1. オプション
+1. FullSliderインスタンスの参照
 
 ## これはなに
 
@@ -17,8 +18,8 @@
 - [jQuery](http://jquery.com)
 - [jQuery.easing](http://gsgd.co.uk/sandbox/jquery/easing/) ※イージングをカスタマイズする場合のみ
 
-- fullslider.js (assets/js/fullslider/fullslider.js)
-- fullslider.css (assets/csss/fullslider.css)
+- fullslider.js : assets/js/fullslider/fullslider.js
+- fullslider.css : assets/csss/fullslider.css
 
 
 ## 環境
@@ -64,6 +65,8 @@ $("#my-full-slider").fullSlider();
 
 ```js
 $("#my-full-slider").fullSlider({
+	autoPlay : true,
+	autoPlayInterval : 8000,
 	slideDuration : 800,
 	slideEasing : "easeOutBounce"
 });
@@ -72,6 +75,15 @@ $("#my-full-slider").fullSlider({
 ## オプション
 
 ※ オプション名 : 型 (初期値)
+
+### autoPlay : Boolean (false)
+
+自動再生をする、あるいはしない
+
+### autoPlayInterval : Integer (10000)
+
+自動再生のインターバル（ミリ秒）
+
 
 ### slideDuration : Integer (500)
 
@@ -102,6 +114,27 @@ $("#my-full-slider").fullSlider({
 非アクティブの画像のアルファ値（スタイルシートと合わせる事）
 
 
+## FullSliderインスタンスの参照
+
+jQuery.dataでFullSliderのインスタンスを埋め込んであります。
+初期化後に何らかの操作を行いたい時に有用です。
+各メソッドについては、ソースを参照してください。
+
+```javascript
+var slider = $("#my-full-slider").fullSlider({ /* options */ });
+var myFullSlider = slider.data("fullSlider");
+
+// #button-top をクリックするとオートプレイを止める例
+$("#button-stop").on("click", function(){
+	myFullSlider.stop();
+});
+
+// #button-start をクリックするとオートプレイをスタートする例
+$("#button-start").on("click", function(){
+	myFullSlider.play();
+});
+
+```
 
 
 ## 制作者
